@@ -1,0 +1,139 @@
+<%- include('header')%>
+    <%- include('sidebar')%>
+        <%- include('navbar')%>
+
+            <!-- Content wrapper -->
+            <div class="content-wrapper">
+                <!-- Content -->
+                <div class="container-xxl flex-grow-1 container-p-y">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 order-1">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-12 col-6 mb-4">
+                                    <div class="card">
+                                        <a href="/viewslider" class="dash-box">
+                                            <div class="card-body">
+                                                <div
+                                                    class="card-title d-flex align-items-start justify-content-between">
+                                                    <div class=" flex-shrink-0 dash-img">
+                                                        <img src="../assets/img/icons/unicons/sliders.png"
+                                                            alt="chart success" class="rounded" />
+                                                    </div>
+                                                </div>
+                                                <span class="d-block mb-1">Total Slider</span>
+                                                <h3 class="card-title text-nowrap mb-2">
+                                                    <%= slider.length %>
+                                                </h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-12 col-6 mb-4">
+                                    <div class="card">
+                                        <a class="dash-box" href="/viewcategory">
+                                            <div class="card-body">
+                                                <div
+                                                    class="card-title d-flex align-items-start justify-content-between">
+                                                    <div class="dash-img flex-shrink-0 ">
+                                                        <img src="../assets/img/icons/unicons/category.png"
+                                                            alt="Credit Card" class="rounded">
+                                                    </div>
+                                                </div>
+
+                                                <span class="d-block mb-1">Total Category</span>
+                                                <h3 class="card-title text-nowrap mb-2">
+                                                    <%= category.length %>
+                                                </h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-12 col-6 mb-4">
+                                    <div class="card">
+                                        <a class="dash-box" href="/viewinstructor">
+
+                                            <div class="card-body">
+                                                <div
+                                                    class="card-title d-flex align-items-start justify-content-between">
+                                                    <div class="dash-img flex-shrink-0">
+                                                        <img src="../assets/img/icons/unicons/instructor.png"
+                                                            alt="Credit Card" class="rounded">
+                                                    </div>
+                                                </div>
+                                                <span class="d-block mb-1">Instructor</span>
+                                                <h3 class="card-title mb-2">
+                                                    <%= instructor.length %>
+                                                </h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-12 col-6 mb-4">
+                                    <div class="card">
+                                        <a class="dash-box" href="/viewcourse">
+                                            <div class="card-body">
+                                                <div
+                                                    class="card-title d-flex align-items-start justify-content-between">
+                                                    <div class="dash-img flex-shrink-0">
+                                                        <img src="../assets/img/icons/unicons/course.png"
+                                                            alt="Credit Card" class="rounded">
+                                                    </div>
+                                                </div>
+                                                <span class="d-block mb-1">Courses</span>
+                                                <h3 class="card-title mb-2">
+                                                    <%= course.length %>
+                                                </h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 col-md-12 col-6 mb-4">
+                                    <div class="card">
+                                        <a class="dash-box" href="/viewuser">
+
+                                            <div class="card-body">
+                                                <div
+                                                    class="card-title d-flex align-items-start justify-content-between">
+                                                    <div class="dash-img flex-shrink-0">
+                                                        <img src="../assets/img/icons/unicons/user.png" alt="User"
+                                                            class="rounded">
+                                                    </div>
+                                                </div>
+                                                <span class="d-block mb-1">User List</span>
+                                                <h3 class="card-title mb-2">
+                                                    <%= users.length %>
+                                                </h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-12 col-6 mb-4">
+                                    <div class="card">
+                                        <a class="dash-box" href="/viewenroll">
+                                            <div class="card-body">
+                                                <div
+                                                    class="card-title d-flex align-items-start justify-content-between">
+                                                    <div class="dash-img flex-shrink-0">
+                                                        <img src="../assets/img/icons/unicons/profile.png" alt="User"
+                                                            class="rounded">
+                                                    </div>
+                                                </div>
+                                                <span class="d-block mb-1">Enrolled Course</span>
+                                                <h3 class="card-title mb-2">
+                                                    <%= enroll.length %>
+                                                </h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- / Content -->
+
+            <%- include('footer')%>
