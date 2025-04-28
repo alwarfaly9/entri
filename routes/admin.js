@@ -30,7 +30,7 @@ const storage = multer.diskStorage({
 
 const uploadfile = multer({ storage: storage });
 
-// Importing middleware function to uploaded  multiple file
+// Importing middleware function to upload multiple files
 const multiplefile = require("../middleware/uploadMultipleFile");
 
 // Import controllers
@@ -66,9 +66,9 @@ routes.post('/login', uploadfile.single('avatar'), LoginController.logindata);
 routes.get('/dashboard', isLogin, LoginController.dashboard);
 
 // Logout
-routes.get('/logout', isLogin, LoginController.logout);
+routes.get('/logout', isLogin, LoginController.logout);  // تم تعديل "router" إلى "routes"
 
-// reset-password
+// Reset password
 routes.get('/resetpassword', isLogin, ResetController.resetpassword);
 routes.post('/resetpassword', ResetController.resetdata);
 
@@ -158,7 +158,7 @@ routes.get('/viewuser', isLogin, UserController.viewuser);
 routes.post('/useractivation', UserController.useractivation);
 routes.get('/deleteuser', UserController.deleteuser);
 
-// certificate
+// Certificate
 // routes.get('/addcertificate', isLogin, CertificateController.certificate);
 routes.get('/generate-certificate', CertificateController.generateCertificate);
 // routes.post('/addCertificate', CertificateController.addCertificate);
@@ -203,10 +203,10 @@ routes.post("/mail-config", mailController.mailConfig);
 
 routes.get('*', function (req, res) {
     res.redirect('/');
-})
+});
 
 // تسجيل الخروج
-router.get('/logout', (req, res) => {
+routes.get('/logout', (req, res) => {  // تم تعديل "router" إلى "routes"
     req.session.destroy((err) => {
         if (err) {
             console.log('❌ Error destroying session:', err);
@@ -215,5 +215,4 @@ router.get('/logout', (req, res) => {
     });
 });
 
-
-module.exports = routes;
+module.exports = routes; // تأكد من تصدير routes وليس router
