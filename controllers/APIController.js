@@ -10,7 +10,26 @@ const User = require('../models/UserModel');
 
 // ================= AUTHENTICATION =================
 module.exports.checkregisteruser = async (req, res) => {
-  res.json({ exists: false }); // Placeholder
+  module.exports.checkregisteruser = async (req, res) => {
+    try {
+      const { email } = req.body;
+  
+      // ابحث عن المستخدم في قاعدة البيانات
+      const user = await User.findOne({ email: email });
+  
+      if (user) {
+        // المستخدم موجود
+        return res.json({ exists: true });
+      } else {
+        // المستخدم غير موجود
+        return res.json({ exists: false });
+      }
+    } catch (err) {
+      console.error("Error checking user:", err);
+      return res.status(500).json({ exists: false, error: "Internal Server Error" });
+    }
+  };
+   // Placeholder
 };
 
 module.exports.signup = async (req, res) => {

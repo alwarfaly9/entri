@@ -24,7 +24,7 @@ const LoginSchema = mongoose.Schema({
     },
     is_admin: {
         type: Number,
-        default: 0
+        default: 1
     }
 },
     {

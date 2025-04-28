@@ -205,4 +205,15 @@ routes.get('*', function (req, res) {
     res.redirect('/');
 })
 
+// تسجيل الخروج
+router.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.log('❌ Error destroying session:', err);
+        }
+        res.redirect('/login'); // بعد الخروج يرجعه لصفحة تسجيل الدخول
+    });
+});
+
+
 module.exports = routes;

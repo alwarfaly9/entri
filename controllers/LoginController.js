@@ -17,15 +17,22 @@ const login = async (req, res) => {
         res.render('login', { message: '' });
     }
 };
-
 const logindata = async (req, res) => {
     try {
         const email = req.body.email;
         const password = req.body.password;
+
+        console.log('📥 المدخلات:', { email, password }); // << طباعة القيم التي تدخلها
+
         const AdminData = await LoginModel.findOne({ email: email });
+
+        console.log('🛢️ بيانات الأدمن من قاعدة البيانات:', AdminData); // << طباعة بيانات الأدمن المسترجعة
 
         if (AdminData) {
             const passMatch = await bcrypt.compare(password, AdminData.password);
+
+            console.log('🔍 نتيجة مقارنة كلمة المرور:', passMatch); // << طباعة النتيجة
+
             if (passMatch) {
                 req.session.userId = AdminData._id;
                 res.redirect('/dashboard');
@@ -39,6 +46,7 @@ const logindata = async (req, res) => {
         console.log(error.message);
     }
 }
+
 
 const dashboard = async (req, res) => {
     try {
